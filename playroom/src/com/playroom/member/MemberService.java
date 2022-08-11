@@ -3,6 +3,8 @@ package com.playroom.member;
 import java.util.List;
 import java.util.Scanner;
 
+import com.playroom.app.Application;
+
 
 
 
@@ -26,14 +28,37 @@ public class MemberService {
 		// 1 row
 		
 		member = MemberManage.getInstance().loginInfo(id);
-	
-		//DB에서 조회한 정보와 내가 입력한 PW 비교
-		if(member.getMemberPw().equals(pw)) {
-			memberInfo = member;
-		} else {
-			System.out.println("로그인 실패");
-		}
+		
+		try {
+	         if (member != null) {
+	            memberInfo = member;
+	         } else {
+	            System.out.println("등록되지 않은 아이디 입니다.");
+	            new Application();
+	         }
+	         if (member.getMemberPw().equals(pw)) {
+	            memberInfo = member;
+	         } else {
+	            System.out.println("비밀번호가 일치하지 않습니다.");
+
+	            new Application();
+	         }
+	      } catch (Exception e) {
+	    	  
+	      }return;
 	}
+		
+		
+		
+		
+		
+//		//DB에서 조회한 정보와 내가 입력한 PW 비교
+//		if(member.getMemberPw().equals(pw)) {
+//			memberInfo = member;
+//		} else {
+//			System.out.println("로그인 실패");
+//		}
+//	}
 	
 	//로그아웃
 	public void logout() {
