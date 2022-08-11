@@ -139,7 +139,9 @@ public class MemberManage extends DAO {
 		Member member = null;
 		try {
 			conn();
-			String sql = "select * from pmember where member_id=?";
+			String sql = "select member_id,member_pw,member_name,child_name,member_email,member_addr "
+						+",to_char(member_start,'yyyy/mm/dd') member_start,to_char(member_last,'yyyy/mm/dd') member_last" 
+						+ ", member_pay from pmember where member_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberId);
 			
@@ -168,7 +170,7 @@ public class MemberManage extends DAO {
 				member.setMemberStart(rs.getString("member_start"));
 				member.setMemberLast(rs.getString("member_last"));
 				member.setMemberPay(rs.getInt("member_pay"));
-				member.setMemberRole(rs.getString("member_role"));
+//				member.setMemberRole(rs.getString("member_role"));
 				list.add(member);
 				
 				}
@@ -186,7 +188,9 @@ public class MemberManage extends DAO {
 		Member member = null;
 		try {
 			conn();
-			String sql = "select * from pmember where member_id = ? ";
+			String sql = "select member_id,member_pw,member_name,child_name,member_email,member_addr "
+					+",to_char(member_start,'yyyy/mm/dd') member_start,to_char(member_last,'yyyy/mm/dd') member_last" 
+					+ ", member_pay from pmember where member_id=?";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberId);
@@ -205,7 +209,7 @@ public class MemberManage extends DAO {
 				member.setMemberStart(rs.getString("member_start"));
 				member.setMemberLast(rs.getString("member_last"));
 				member.setMemberPay(rs.getInt("member_pay"));
-				member.setMemberRole(rs.getString("member_role"));
+//				member.setMemberRole(rs.getString("member_role"));
 				list.add(member);
 				
 				}
