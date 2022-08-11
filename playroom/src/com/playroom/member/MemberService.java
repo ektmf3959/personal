@@ -193,13 +193,18 @@ public class MemberService {
 	
 	//매출총합
 	public void allPay() {
-		Member member = new Member();
-		int pay = MemberManage.getInstance().getPay();
-			
-			System.out.println("==================");
-			System.out.println("|    " + pay + "    |");
-			System.out.println("==================");
+		List<Member> list = MemberManage.getInstance().getPay();
+//		int pay = MemberManage.getInstance().getPay();
+//			
+//			System.out.println("==================");
+//			System.out.println("|    " + pay + "    |");
+//			System.out.println("==================");
 		
+			for ( Member member : list) {
+			
+			System.out.println("| 월 : " + member.getMemberStart() + " | 매출 : " + member.getMemberPay() + " | ");
+			
+		}
 
 	}
 	

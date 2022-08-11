@@ -226,25 +226,51 @@ public class MemberManage extends DAO {
 	
 	
 	//매출총합
-	public int getPay(){
-		int pay = 0;
+	public List<Member> getPay(){
+//		int pay = 0;
+//		try {
+//			conn();
+//			String sql = "SELECT sum(member_pay) FROM pmember";
+//			
+//			pstmt = conn.prepareStatement(sql);
+//			
+//			rs = pstmt.executeQuery();
+//			
+//		
+//			if(rs.next()) {
+//				pay = rs.getInt("sum(member_pay)");
+//			}
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			disconnect();
+//		}		
+//		return pay;
+//	}
+		List<Member> list = new ArrayList<>();
+		Member member = null;
 		try {
 			conn();
-			String sql = "SELECT sum(member_pay) FROM pmember";
+			String sql = "SELECT to_char(member_start, 'yyyy/mm') as amount,sum(member_pay) as pay from pmember" 
+						+ " WHERE member_start is not null group by to_char(member_start, 'yyyy/mm')";
 			
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
 			
-		
-			if(rs.next()) {
-				pay = rs.getInt("sum(member_pay)");
-			}
+			while (rs.next()){
+				member = new Member();
+				
+				member.setMemberStart(rs.getString("amount"));
+				member.setMemberPay(rs.getInt("pay"));
+				list.add(member);
+				}
+							
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			disconnect();
 		}		
-		return pay;
+		return list;
 	}
 }
