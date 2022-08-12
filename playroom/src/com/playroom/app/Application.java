@@ -16,20 +16,20 @@ public class Application {
 	}
 
 	private void run() {
-		System.out.println("      llllllll");
-		System.out.println("    llllllllllll");
-		System.out.println("  llllllllllllllll");
-		System.out.println(" lllllllllllllllllll");
-		System.out.println("lllllllllllllllllllll");
+		System.out.println("      llllll");
+		System.out.println("    llllllllll");
+		System.out.println("  llllllllllllll");
+		System.out.println(" lllllllllllllllll");
+		System.out.println("lllllllllllllllllll");
 		System.out.println("");
 		System.out.println("    〓〓        〓〓");
 		System.out.println("     ●          ●     ");
 		System.out.println("");
 		System.out.println("          ▲          ");
 		System.out.println("");
-		System.out.println("▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽");
+		System.out.println("▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽");
 		System.out.println("▷ 1. 로그인 | 2. 종료 ◁");
-		System.out.println("△△△△△△△△△△△△△△△△△");
+		System.out.println("△△△△△△△△△△△△△△△△△△");
 		try {
 		int menuNo = 0;
 //		if (menuNo == 0) {
