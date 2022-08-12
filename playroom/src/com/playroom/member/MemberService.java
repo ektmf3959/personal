@@ -48,6 +48,32 @@ public class MemberService {
 	    	  
 	      }return;
 	}
+	
+//	public void doLogin() {
+//	      Member member = new Member();
+//	   
+//	      System.out.println("접속할 ID를 입력해주세요 ▶▶");
+//	      String id = sc.nextLine();
+//	      System.out.println("접속할 PW를 입력해주세요 ▶▶>");
+//	      String pw = sc.nextLine();
+//
+//	      member = MemberManage.getInstance().getloginInfo(id);
+//
+//	      if (member != null && member.getMemberId().equals(id) && member.getMemberPw().equals(pw)) {
+//	         memberInfo = member;
+//	         System.out.println("   〓〓 환영합니다 !! 〓〓");
+//	         System.out.println("  〓〓 로그인 되었습니다. 〓〓");
+//	         return;
+//	      } else if (member == null){
+//	         System.out.println("    〓〓 존재하지 않는 ID입니다. 〓〓");
+//	         System.out.println("  〓〓 로그인 ID를 다시 확인해주세요. 〓〓");
+//	         return;
+//	      }else if (member.getMemberId().equals(id) && !member.getMemberPw().equals(pw)) {
+//	         System.out.println("      〓〓 잘못된 PW입니다. 〓〓");
+//	         System.out.println("  〓〓 로그인 PW를 다시 확인해주세요. 〓〓");
+//	         return;
+//	      }
+
 		
 		
 		
