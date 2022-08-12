@@ -47,15 +47,18 @@ public class Application {
 			}
 			break;
 		case 2:
-			System.out.println("종료합니다.");
+			System.out.println("1종료합니다.");
 			break;
 		}
 
 		  } catch(Exception e) {
-			  System.out.println("종료합니다.");
-			  
+			  System.out.println("2종료합니다.");			
 		  }
-		return;
+		  
+		
+//		new Application();
+				
+		
 		
 		
 //		if ( a == 1) {
@@ -68,4 +71,6 @@ public class Application {
 //			System.out.println("종료");
 //		}
 	}
+
+	
 }

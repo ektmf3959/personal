@@ -41,6 +41,7 @@ public class MemberService {
 	         } else {
 	            System.out.println("비밀번호가 일치하지 않습니다.");
 
+	            memberInfo = null;
 	            new Application();
 	         }
 	      } catch (Exception e) {
@@ -61,11 +62,11 @@ public class MemberService {
 //	}
 	
 	//로그아웃
-	public void logout() {
-		
-		if(memberInfo != null)
-		memberInfo = null;
-	}
+//	public void logout() {
+//		
+//		if(memberInfo != null)
+//		memberInfo = null;
+//	}
 	
 	//고객 등록
 	public void registerCustomer() {
