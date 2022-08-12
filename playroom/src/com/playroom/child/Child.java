@@ -19,5 +19,6 @@ CHILD_EXPLAIN	VARCHAR2(4000 BYTE)
 	private String childParents;
 	private String childClass;
 	private String childExplain;
+	private String cmemberId;
 	
 }

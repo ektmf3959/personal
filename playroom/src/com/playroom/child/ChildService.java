@@ -73,8 +73,8 @@ public class ChildService {
 	
 public void getDetailMychild() {
 		
-		System.out.println("어린이 이름>");
-		String childName = sc.nextLine();
+//		System.out.println("어린이 이름>");
+//		String childName = sc.nextLine();
 				
 		/*
 		 * CHILD_NAME 
@@ -84,7 +84,7 @@ public void getDetailMychild() {
 		 * CHILD_EXPLAIN
 		 */
 		
-		List<Child> list = ChildManage.getInstance().getDetailMychild(childName);
+		List<Child> list = ChildManage.getInstance().getDetailMychild(MemberService.memberInfo.getMemberId());
 		
 		
 				//MemberManage.getInstance().getDetailMyinfo(MemberService.memberInfo.getMemberId());

@@ -68,15 +68,15 @@ public class ChildManage extends DAO {
 	}
 
 	// 어린이 정보 조회
-	public List<Child> getDetailMychild(String childName) {
+	public List<Child> getDetailMychild(String cmemberId) {
 		List<Child> list = new ArrayList<>();
 		Child child = null;
 		try {
 			conn();
-			String sql = "select * from child where child_name = ? ";
+			String sql = "select * from child where member_id = ? ";
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, childName);
+			pstmt.setString(1, cmemberId);
 
 			rs = pstmt.executeQuery();
 
