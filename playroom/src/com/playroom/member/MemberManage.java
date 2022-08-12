@@ -252,7 +252,7 @@ public class MemberManage extends DAO {
 		try {
 			conn();
 			String sql = "SELECT to_char(member_start, 'yyyy/mm') as amount,sum(member_pay) as pay from pmember" 
-						+ " WHERE member_start is not null group by to_char(member_start, 'yyyy/mm')";
+						+ " WHERE member_start is not null group by to_char(member_start, 'yyyy/mm') order by to_char(member_start, 'yyyy/mm')";
 			
 			pstmt = conn.prepareStatement(sql);
 			
